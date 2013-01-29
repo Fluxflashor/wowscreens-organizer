@@ -46,7 +46,13 @@ def get_screenshot_datestamp(filename):
     matches = expression.search(filename)
 
     if matches:
-        datestamp = matches.group(3)
+        datestamp_raw = matches.group(3)
+
+        # the datestamp is always 6 digits so this will work.
+        # if you ever change this blizzard, i'll hate you.
+
+        datestamp = datestamp_raw[-2] + datestamp_raw[-1]+ datestamp_raw[:-2]
+
     else:
         datestamp = None
 
@@ -86,7 +92,7 @@ for path, _, files in os.walk(screenshots_folder):
                 if file_datestamp >= expansion['start'] and file_datestamp <= expansion['end']:
 
                     try:
-                        shutil.copy(path+'/'+file_name, screenshots_organized_folder + expansion['folder-name']+file_name)
+                        shutil.copy(path+'/'+file_name, screenshots_organized_folder + expansion['folder-name']+'/'+file_name)
                     except IOError as e:
                         print e
 
