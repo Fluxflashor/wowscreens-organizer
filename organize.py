@@ -61,6 +61,14 @@ if not os.path.exists(screenshots_organized_folder):
         print e
         sys.exit()
 
+for _, expansion in wow_expansion_dates.items():
+    if not os.path.exists(screenshots_organized_folder+expansion['folder-name']):
+        try:
+            os.makedirs(screenshots_organized_folder+expansion['folder-name'])
+        except OSError as e:
+            print e
+            sys.exit()
+
 for path, _, files in os.walk(screenshots_folder):
 
     for file_name in files:
