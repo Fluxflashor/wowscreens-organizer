@@ -13,3 +13,26 @@ wow_expansion_dates = {
 
 screenshots_folder = 'input'
 screenshots_organized_folder = 'output/wow-screenshots'
+
+def get_screenshot_datestamp(filename):
+    
+    expression = re.compile('((?:[a-z][a-z]+))'+'(_)'+'(\\d+)')
+    matches = expression.search(filename)
+
+    if matches:
+        datestamp = matches.group(3)
+    else:
+        datestamp = None
+
+    return datestamp
+
+
+# testing shit
+filenum = 1
+for _, _, files in os.walk(screenshots_folder):
+    
+    for fname in files:
+        print filenum
+        filenum+=1
+        yar = get_screenshot_datestamp(fname)
+        print yar
