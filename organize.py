@@ -4,7 +4,7 @@ import sys
 import shutil
 
 # Configure me!
-screenshots_folder = 'input'
+screenshots_folder = 'C:/'
 screenshots_organized_folder = 'output/wow-screenshots/'
 
 # WoWScrnShot_MMDDYY_TTTTTT.EXT
@@ -62,9 +62,9 @@ def get_screenshot_datestamp(filename):
 def is_wow_screenshot(filename):
     # crude but it works for me
 
-    if "WoWScrnShot" is in filename:
+    if "WoWScrnShot" in filename:
         return True
-    else
+    else:
         return False
 
 
