@@ -3,12 +3,36 @@ import re
 
 # WoWScrnShot_MMDDYY_TTTTTT.EXT
 wow_expansion_dates = {
-    '0x-warcraft.beta': '010100',          # January 1, 2000 (safety)
-    '1x-classic': '112304',                # November 23, 2004
-    '2x-the.burning.crusade': '011607',    # January 16, 2007
-    '3x-wrath.of.the.lich.king': '111308', # November 13, 2008
-    '4x-cataclysm': '120710',              # December 7, 2010
-    '5x-mists.of.pandaria': '082512'       # September 25, 2012
+    '0x': {            # January 1, 2000 (safety)
+        'folder-name': 'wow-beta',
+              'start': '010100',
+                'end': '112204'
+    },         
+    '1x': {            # November 23, 2004
+        'folder-name': 'classic',
+              'start': '112304',
+                'end': '011507'
+    },
+    '2x': {            # January 16, 2007
+        'folder-name': 'the-burning-crusade',
+              'start': '011607',
+                'end': '111208'
+    },
+    '3x': {            # November 13, 2008
+        'folder-name': 'wrath-of-the-lich-king',
+              'start': '111308',
+                'end': '120610'
+    },
+    '4x': {            # December 7, 2010
+        'folder-name': 'cataclysm',
+              'start': '120710',
+                'end': '082412'
+    },
+    '5x': {            # September 25, 2012
+        'folder-name': 'mists-of-pandaria',
+              'start': '082512',
+                'end': '010115'
+    }
 }
 
 screenshots_folder = 'input'
