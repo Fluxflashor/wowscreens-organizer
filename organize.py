@@ -3,6 +3,10 @@ import re
 import sys
 import shutil
 
+# Configure me!
+screenshots_folder = 'input'
+screenshots_organized_folder = 'output/wow-screenshots/'
+
 # WoWScrnShot_MMDDYY_TTTTTT.EXT
 wow_expansion_dates = {
     '0x': {            # January 1, 2000 (safety)
@@ -36,9 +40,6 @@ wow_expansion_dates = {
                 'end': '150101'
     }
 }
-
-screenshots_folder = 'input'
-screenshots_organized_folder = 'output/wow-screenshots/'
 
 def get_screenshot_datestamp(filename):
     
