@@ -54,6 +54,8 @@ def get_screenshot_datestamp(filename):
 
 
 # main stoofs
+
+# 
 if not os.path.exists(screenshots_organized_folder):
     try: 
         os.makedirs(screenshots_organized_folder)
@@ -62,9 +64,11 @@ if not os.path.exists(screenshots_organized_folder):
         sys.exit()
 
 for _, expansion in wow_expansion_dates.items():
-    if not os.path.exists(screenshots_organized_folder+expansion['folder-name']):
+    expansion_folder_path = screenshots_organized_folder + expansion['folder-name']
+
+    if not os.path.exists(expansion_folder_path):
         try:
-            os.makedirs(screenshots_organized_folder+expansion['folder-name'])
+            os.makedirs(expansion_folder_path)
         except OSError as e:
             print e
             sys.exit()
@@ -75,7 +79,14 @@ for path, _, files in os.walk(screenshots_folder):
         file_datestamp = get_screenshot_datestamp(file_name)
 
         if file_datestamp is not None:
-            try:
-                shutil.copy(path+'/'+file_name, screenshots_organized_folder+file_name)
-            except IOError as e:
-                print e
+
+            for _, expansion in wow_expansion_dates.items():
+                expansion_folder_path = screenshots_organized_folder + expansion['folder-name']
+
+                if file_datestamp >= expansion['start'] and file_datestamp <= expansion['end']:
+
+                    try:
+                        shutil.copy(path+'/'+file_name, screenshots_organized_folder + expansion['folder-name']+file_name)
+                    except IOError as e:
+                        print e
+
