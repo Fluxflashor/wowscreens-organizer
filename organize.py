@@ -1,5 +1,7 @@
 import os
 import re
+import sys
+import shutil
 
 # WoWScrnShot_MMDDYY_TTTTTT.EXT
 wow_expansion_dates = {
@@ -36,7 +38,7 @@ wow_expansion_dates = {
 }
 
 screenshots_folder = 'input'
-screenshots_organized_folder = 'output/wow-screenshots'
+screenshots_organized_folder = 'output/wow-screenshots/'
 
 def get_screenshot_datestamp(filename):
     
@@ -51,12 +53,21 @@ def get_screenshot_datestamp(filename):
     return datestamp
 
 
-# testing shit
-filenum = 1
-for _, _, files in os.walk(screenshots_folder):
-    
-    for fname in files:
-        print filenum
-        filenum+=1
-        yar = get_screenshot_datestamp(fname)
-        print yar
+# main stoofs
+if not os.path.exists(screenshots_organized_folder):
+    try: 
+        os.makedirs(screenshots_organized_folder)
+    except OSError as e:
+        print e
+        sys.exit()
+
+for path, _, files in os.walk(screenshots_folder):
+
+    for file_name in files:
+        file_datestamp = get_screenshot_datestamp(file_name)
+
+        if file_datestamp is not None:
+            try:
+                shutil.copy(path+'/'+file_name, screenshots_organized_folder+file_name)
+            except IOError as e:
+                print e
