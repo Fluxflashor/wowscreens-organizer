@@ -9,3 +9,6 @@ wow_expansion_dates = {
     '4x-cataclysm': '120710',              # December 7, 2010
     '5x-mists.of.pandaria': '082512'       # September 25, 2012
 }
+
+screenshots_folder = 'input'
+screenshots_organized_folder = 'output/wow-screenshots'
