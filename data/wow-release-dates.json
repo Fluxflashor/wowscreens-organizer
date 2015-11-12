@@ -1,7 +1,7 @@
 {
     "expansions": [
         { 
-            "game": "wow-beta",
+            "expansion": "wow-beta",
             "patches": [
                 { "version": "0.6", "release": "April 13, 2004" },
                 { "version": "0.7", "release": "June 15, 2004" },
@@ -13,7 +13,7 @@
             ]
         },
         {
-            "game": "classic",
+            "expansion": "classic",
             "patches": [
                 {"version": "1.1", "release": "November 7, 2004", "name": "World of Warcraft"},
                 {"version": "1.2", "release": "December 18, 2004", "name": "Mysteries of Maraudon"},
@@ -31,7 +31,7 @@
             ]
         },
         {
-            "game": "the-burning-crusade",
+            "expansion": "the-burning-crusade",
             "patches": [
                 {"version": "2.0", "release": "January 16, 2007", "name": "The Burning Crusade"},
                 {"version": "2.1", "release": "May 22, 2007", "name": "The Black Temple"},
@@ -42,7 +42,7 @@
             ]
         },
         {
-            "game": "wrath-of-the-lich-king",
+            "expansion": "wrath-of-the-lich-king",
             "patches": [
                 {"version": "3.0", "release": "November 13, 2008", "name": "Wrath of the Lich King"},
                 {"version": "3.1", "release": "April 14, 2009", "name": "Secrets of Ulduar"},
@@ -53,7 +53,7 @@
             ]
         },
         {
-            "game": "cataclysm",
+            "expansion": "cataclysm",
             "patches": [
                 {"version": "4.0", "release": "December 7, 2010", "name": "Cataclysm"},
                 {"version": "4.1", "release": "April 26, 2011", "name": "Rise of the Zandalari"},
@@ -63,7 +63,7 @@
             ]
         },
         {
-            "game": "mists-of-pandaria",
+            "expansion": "mists-of-pandaria",
             "patches": [
                 {"version": "5.0", "release": "September 25, 2012", "name": "Mists of Pandaria"},
                 {"version": "5.1", "release": "November 13, 2012", "name": "Landfall"},
@@ -74,7 +74,7 @@
             ]
         },
         {
-            "game": "warlords-of-draenor",
+            "expansion": "warlords-of-draenor",
             "patches": [
                 {"version": "6.0", "release": "November 13, 2014", "name": "Warlords of Draenor"},
                 {"version": "6.1", "release": "February 24, 2015", "name": "Garrisons Update"},
